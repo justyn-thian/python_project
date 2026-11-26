@@ -1,30 +1,43 @@
 import tkinter as tk
+from tkinter import messagebox 
 window=tk.Tk()
 window.geometry("500x500")
 window.title("kalkulator")
 print("1237")
 def hitungkalkulator():
-    print("123")
-    angka1=input1.get()
-    angka2=input2.get()
-    angka1=int(angka1)
-    angka2=int(angka2)
-    operasi=input3.get()
-    print (angka1)
-    print (angka2)
-    print (operasi)
-    if operasi=="+":
-        hasil=angka1+angka2
-        print(hasil)
-    elif operasi=="-":
-        hasil2=angka1-angka2
-        print(hasil2)
-    elif operasi=="*":
-        hasil3=angka1*angka2
-        print(hasil3)
-    elif operasi=="/":
-        hasil4=angka1/angka2
-        print(hasil4)
+    try:   
+        print("123")
+        angka1=input1.get()
+        angka2=input2.get()
+        angka1=int(angka1)
+        angka2=int(angka2)
+        operasi=input3.get()
+
+        print (angka1)
+        print (angka2)
+        print (operasi)
+        if operasi=="+":
+            hasil=angka1+angka2
+            print(hasil)
+            text4.config(text=hasil)
+        elif operasi=="-":
+            hasil2=angka1-angka2
+            print(hasil2)
+            text4.config(text=hasil2)
+        elif operasi=="*":
+            hasil3=angka1*angka2
+            print(hasil3)
+            text4.config(text=hasil3)
+            messagebox.showinfo ("suda")
+        elif operasi=="/":
+            hasil4=angka1/angka2
+            print(hasil4)
+            text4.config(text=hasil4)
+            messagebox.showinfo ("sudah melakukan kalkulasi kalkulator")
+        else :
+            messagebox.showerror("error","masukkan operasi yang benar")
+    except:
+        messagebox.showerror("error","masukkan angka bukan huruf")
 judul=tk.Label(window,text="aplikasi kalkulator")
 judul.grid(row=0,column=0,padx=10,pady=10)
 text1=tk.Label(window,text="mohon masukkan angka pertama")
